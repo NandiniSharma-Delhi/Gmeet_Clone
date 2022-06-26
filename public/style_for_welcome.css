@@ -1,0 +1,166 @@
+@import "footer.css";
+
+
+/* header*/
+a.navbar-brand {
+    font-family: 'Rubik Moonrocks', cursive;
+    /* color:rgb(14, 130, 150); */
+    background:rgb(14, 130, 150) ;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    padding-left: 1rem;
+}
+a.navbar-brand:hover {
+    /* color:rgb(12, 110, 127); */
+    background: rgb(12, 110, 127);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+.navbar-nav {
+    font-family:'Titillium Web', sans-serif;
+    font-weight: 600;
+}
+
+#Sign_In_Button {
+    background:rgb(14, 130, 150) ;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+#Sign_In_Button:hover {
+    background:rgb(12, 110, 127);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+.nav-item {
+    padding-left: 1rem;
+}
+
+
+/*header_end*/
+/*welcome page*/
+.heading {
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size:4cm;
+    /* background-image: url("https://www.thestatesman.com/wp-content/uploads/2020/07/BeFunky-collageg.jpg");
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text; */
+    background: url(https://th.bing.com/th/id/R.f95200d66cc90cd4d876cb7b8cff9b51?rik=VlyNldHaMH7bUg&riu=http%3a%2f%2fcdn.playbuzz.com%2fcdn%2fca8189c8-735c-4664-a3f2-0cf16f5f02e8%2f85c36bf6-03fd-4b50-b20a-b5d64f93b833.gif&ehk=0%2fgzMLaYUtl2d7KZK%2fUSwmGOVrVIJACNWdZ5yIvbv2c%3d&risl=&pid=ImgRaw&r=0);
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.heading_text {
+    font-family:'Titillium Web', sans-serif;
+    font-size:1cm;
+}
+
+.heading_subtext {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family:'Titillium Web', sans-serif;
+    font-size:0.75cm;
+}
+
+.main {
+    height: 500px;
+    padding:3rem 3rem 3rem 3rem;
+    /* display: flex; */
+}
+.guestbox {
+    display: flex;
+    height: 125px;
+    font-family:'Titillium Web', sans-serif;
+    background-color: rgba(231, 234, 237, 0.286);
+    border-radius: 0.5cm;
+    /* padding:0rem 0rem 1rem 0rem; */
+    margin-bottom: 0.5cm;
+}
+
+.loginbox {
+    display: flex;
+    height: 125px;
+    font-family:'Titillium Web', sans-serif;
+    background-color: rgba(231, 234, 237, 0.286);
+    border-radius: 0.5cm;
+    /* padding:0rem 0rem 1rem 0rem; */
+    margin-bottom: 0.5cm;
+}
+
+.guest_text {
+    font-weight: 600;
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1rem 1rem 3rem;
+}
+.guest_button {
+    font-size: 0.5cm;
+    flex:0.2;
+    padding: 3rem 1rem 1rem 1rem;
+}
+.guest_subtext {
+    font-size: 0.3cm;
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem 1rem 3rem;
+}
+.login_text {
+    font-weight: 600;
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1rem 1rem 3rem;
+}
+.login_subtext {
+    font-size: 0.3cm;
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem 1rem 3rem;
+}
+.login_button {
+    font-size:0.5cm;
+    flex:0.2;
+    padding: 3rem 1rem 1rem 1rem;
+}
+.guest_button_instant {
+    font-weight: 600;
+    background-color:rgb(14, 130, 150);
+    color:aliceblue;
+    padding:1rem 1rem 1rem 1rem;
+    border-radius:0.75rem;
+    
+}
+.guest_button_instant:hover {
+    font-weight: 600;
+    background-color:rgb(12, 110, 127);
+    color:aliceblue;
+    padding:1rem 1rem 1rem 1rem;
+    border-radius:0.75rem;
+    text-decoration: none;
+}
+.login_button_instant {
+    font-weight: 600;
+    background-color:rgb(14, 130, 150);
+    color:aliceblue;
+    padding:1rem 1rem 1rem 1rem;
+    border-radius:0.75rem;
+    
+}
+.login_button_instant:hover {
+    font-weight: 600;
+    background-color:rgb(12, 110, 127);
+    color:aliceblue;
+    padding:1rem 1rem 1rem 1rem;
+    border-radius:0.75rem;
+    text-decoration: none;
+}
+/*welcome ends */

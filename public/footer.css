@@ -1,0 +1,22 @@
+/*footer */
+.footer {
+    /* display: flex; */
+    /* flex:1.0; */
+    /* position: fixed; */
+    font-family:'Titillium Web', sans-serif;
+    height:150px;
+    font-size:0.5cm;
+    padding:1rem 1rem 1rem 1rem;
+    margin-top: 7cm;
+    background-color: rgba(231, 234, 237, 0.286);
+}
+
+.footer span{
+    background: url(https://th.bing.com/th/id/R.f95200d66cc90cd4d876cb7b8cff9b51?rik=VlyNldHaMH7bUg&riu=http%3a%2f%2fcdn.playbuzz.com%2fcdn%2fca8189c8-735c-4664-a3f2-0cf16f5f02e8%2f85c36bf6-03fd-4b50-b20a-b5d64f93b833.gif&ehk=0%2fgzMLaYUtl2d7KZK%2fUSwmGOVrVIJACNWdZ5yIvbv2c%3d&risl=&pid=ImgRaw&r=0);
+  background-size: cover;
+  font-size: 0.75cm;
+  padding:0.5rem 0rem 0rem 0rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*footer ends*/
