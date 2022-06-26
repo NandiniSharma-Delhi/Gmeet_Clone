@@ -94,10 +94,7 @@ app.get("/logout", (req, res) => {
 
 
 
-app.get('/white', (req, res) => {
-  res.render('bluek');
-  // res.redirect(`/${uuidV4()}`)
-})
+
 
 
 
@@ -105,14 +102,12 @@ app.get('/', (req, res) => {
   res.render('welcome');
   // res.redirect(`/${uuidV4()}`)
 })
+
 app.get('/Join', (req, res) => {
   res.render('joinmeet',{roomId:`${uuidV4()}`,uname:Uname})
   // res.redirect(`/${uuidV4()}`)
 })
-app.get('/white/:room', (req, res) => {
-  res.render('bluek',{ roomId : req.params.room })
-  // res.redirect(`/${uuidV4()}`)
-});
+
 app.get('/Overview', (req, res) => {
   res.render('overview');
   // res.redirect(`/${uuidV4()}`)
@@ -137,10 +132,7 @@ io.on('connection', socket => {
     //send message to the same room
     io.to(roomId).emit('newname', nap)
 }); 
-//   socket.on('meta', (message) => {
-//     //send message to the same room
-//     io.to(roomId).emit('Usermeta', message)
-// }); 
+
 socket.on('draw', (data) => {
   //send message to the same room
   io.to(roomId).emit('ondraw',data )
