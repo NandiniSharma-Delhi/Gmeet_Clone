@@ -1,199 +1,207 @@
 .body {
-    font-family:'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .header {
-    /* z-index: 2; */
-    position:fixed;
-    top:0;
-    padding:1rem 1rem 1rem 1rem;
-    margin-top: 0cm;
-    background-color: rgba(231, 234, 237, 0.286);
+  /* z-index: 2; */
+  position: fixed;
+  top: 0;
+  padding: 1rem 1rem 1rem 1rem;
+  margin-top: 0cm;
+  background-color: rgba(231, 234, 237, 0.286);
 }
-.main{
-    margin-top: 4rem;
+
+h2 {
+  display: contents;
+  float: left;
+  color: aliceblue;
 }
-.header_text{
-    margin-left: 3%;
-    font-size:0.5cm;
+.main {
+  margin-top: 4rem;
+}
+.header_text {
+  margin-left: 3%;
+  font-size: 0.5cm;
 }
 
 .roomId {
-    margin-left: 50%;
+  margin-left: 50%;
+}
+
+.body1 {
+  display: flex;
+  justify-content: left;
 }
 
 .main_left {
-    height:100%;
-    background-color:rgba(0, 7, 8, 0.011) ;
-    /* border-right: 0.2cm solid red; */
+  height: 100%;
+  background-color: rgba(0, 7, 8, 0.011);
+  /* border-right: 0.2cm solid red; */
 }
 
 .main_videos {
-    /* display:flex; */
-    background-color: rgba(231, 234, 237, 0.286);
-    justify-content:center;
-    align-items: center;
+  /* display:flex; */
+  background-color: rgba(231, 234, 237, 0.286);
+  justify-content: center;
+  align-items: center;
 }
 .main_controls {
-    position:fixed;
-    bottom:0;
-    padding:1rem 1rem 1rem 1rem;
-    /* margin-top: 0cm; */
-    background-color: rgba(231, 234, 237, 0.286);
+  position: fixed;
+  bottom: 0;
+  padding: 1rem 1rem 1rem 1rem;
+  /* margin-top: 0cm; */
+  background-color: rgba(231, 234, 237, 0.286);
 }
 
-.main__controls__block1{
-    margin:0rem 2rem 0rem 2rem;
-    color:red;
-    width:4cm;
+.main__controls__block1 {
+  margin: 0rem 2rem 0rem 2rem;
+  color: red;
+  width: 4cm;
 }
-.main__controls__block2{
-    margin:0rem 2% 0rem 5%;
-    color:rgb(14, 130, 150);
-    width:4cm;
+.main__controls__block2 {
+  margin: 0rem 2% 0rem 5%;
+  color: rgb(14, 130, 150);
+  width: 4cm;
 }
-.main__controls__block3{
-    margin:0rem 2% 0rem 5%;
-    /* color:red; */
-    width:4cm;
+.main__controls__block3 {
+  margin: 0rem 2% 0rem 5%;
+  /* color:red; */
+  width: 4cm;
 }
-.main__controls__button{
-    margin:0rem 0.5rem 0rem 0.5rem;
-    padding:0.5rem 1rem 0.5rem 1rem;
-    border-radius: 7px 7px 7px 7px;
-
-}
-
-.main__controls__button:hover{
-    background-color: rgb(255, 255, 255);
-
+.main__controls__button {
+  margin: 0rem 0.5rem 0rem 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 7px 7px 7px 7px;
 }
 
-.leave_meeting{
-    color:aliceblue;
-    background-color: red;
-    padding:0.5rem 1rem 0.5rem 1rem;
-    border-radius: 7px 7px 7px 7px;
+.main__controls__button:hover {
+  background-color: rgb(255, 255, 255);
 }
-.leave_meeting:hover{
-    color:aliceblue;
-    background-color: rgb(187, 3, 3);
-    padding:0.5rem 1rem 0.5rem 1rem;
-    border-radius: 7px 7px 7px 7px;
+
+.leave_meeting {
+  color: aliceblue;
+  background-color: red;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 7px 7px 7px 7px;
+}
+.leave_meeting:hover {
+  color: aliceblue;
+  background-color: rgb(187, 3, 3);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 7px 7px 7px 7px;
 }
 .canvas_header {
-    background-color:rgb(14, 130, 150) ;
-    color:aliceblue;
-    position:relative;
-    top:0;
+  background-color: rgb(14, 130, 150);
+  color: aliceblue;
+  position: relative;
+  top: 0;
 }
 .canvas_draw {
-    height:320px;
-    width:100%;
+  height: 320px;
+  width: 100%;
 }
 
 .canvas_window {
-    margin-top: 0rem;
-    margin-bottom: 0.5rem;
-    border :5px solid rgb(14, 130, 150) ;
-    border-radius: 5px 5px 5px 5px;
-    height:350px;
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
+  border: 5px solid rgb(14, 130, 150);
+  border-radius: 5px 5px 5px 5px;
+  height: 350px;
 }
 
 .main__chat_window {
-    /* height:250px; */
-    height: 100%;
-    border :5px solid rgb(14, 130, 150) ;
-    border-radius: 5px 5px 5px 5px;
+  /* height:250px; */
+  height: 100%;
+  border: 5px solid rgb(14, 130, 150);
+  border-radius: 5px 5px 5px 5px;
 }
 .main_right {
-    height:100%;
+  height: 100%;
 }
 .chat__header {
-    background-color:rgb(14, 130, 150) ;
-    color:aliceblue;
-    position:relative;
-    top:0;
+  background-color: rgb(14, 130, 150);
+  color: aliceblue;
+  position: relative;
+  top: 0;
 }
 .main__message_container {
-    width:100%;
-    position:fixed;
-    bottom:0;
-    background-color:rgba(231, 234, 237, 0.286);
-    padding:1rem 1rem 1rem 1rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(231, 234, 237, 0.286);
+  padding: 1rem 1rem 1rem 1rem;
 }
-.messages{
-    /* color: bl; */
-    list-style: none;
+.messages {
+  /* color: bl; */
+  list-style: none;
 }
 #chat_message {
-    margin:0cm 0.3cm 0cm 0.3rem;
-    /* width:100%; */
-    padding:0cm 0.2cm 0cm 0.2cm;
-    background-color: transparent;
-    border: none;
+  margin: 0cm 0.3cm 0cm 0.3rem;
+  /* width:100%; */
+  padding: 0cm 0.2cm 0cm 0.2cm;
+  background-color: transparent;
+  border: none;
 }
 #can {
-    margin:1rem 0rem 1rem 2rem;
-   border:2px solid rgb(14, 130, 150);
-   border-radius:5px;
+  margin: 1rem 0rem 1rem 2rem;
+  border: 2px solid rgb(14, 130, 150);
+  border-radius: 5px;
 }
 
 #colorchoose {
-    margin:0rem 0rem 1rem 2rem;
+  margin: 0rem 0rem 1rem 2rem;
 }
 #green {
-    margin:1rem 0.5rem 1rem 2rem;
-    color:rgb(62, 233, 62);
+  margin: 1rem 0.5rem 1rem 2rem;
+  color: rgb(62, 233, 62);
 }
-#blue{
-    margin:1rem 0.5rem 1rem 0.5rem;
-    color:rgb(87, 87, 222);
+#blue {
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  color: rgb(87, 87, 222);
 }
-#red{
-    margin:1rem 0.5rem 1rem 0.5rem;
-    color:rgb(244, 91, 91);
+#red {
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  color: rgb(244, 91, 91);
 }
-#yellow{
-    margin:1rem 0.5rem 1rem 0.5rem;
-    color:rgb(254, 254, 104);
+#yellow {
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  color: rgb(254, 254, 104);
 }
-#orange{
-    margin:1rem 0.5rem 1rem 0.5rem;
-    color:rgb(244, 178, 55);
+#orange {
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  color: rgb(244, 178, 55);
 }
-#black{
-    margin:1rem 0.5rem 1rem 0.5rem;
-    color:rgb(70, 69, 69);
+#black {
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  color: rgb(70, 69, 69);
 }
-#erasertext{
-    margin:0rem 0rem 1rem 2rem;
-}
-
-.coloroption{
-    text-decoration: none;
-    background-color: whitesmoke;
-    border:none;
-    border-radius: 2px;
-}
-.save_input{
-    margin:0rem 0rem 1rem 2rem;
-    color:white;
-    background-color: rgb(14, 130, 150);
-    border:none;
-    border-radius: 5px;
-
-}
-.clear_input{
-    margin:0rem 0rem 1rem 2rem;
-    color:white;
-    background-color: rgb(14, 130, 150);
-    border:none;
-    border-radius: 5px;
+#erasertext {
+  margin: 0rem 0rem 1rem 2rem;
 }
 
-#canvasimg{
-    margin:1rem 0rem 1rem 2rem;
-    border:2px solid rgb(14, 130, 150);
-    border-radius:5px;
+.coloroption {
+  text-decoration: none;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 2px;
+}
+.save_input {
+  margin: 0rem 0rem 1rem 2rem;
+  color: white;
+  background-color: rgb(14, 130, 150);
+  border: none;
+  border-radius: 5px;
+}
+.clear_input {
+  margin: 0rem 0rem 1rem 2rem;
+  color: white;
+  background-color: rgb(14, 130, 150);
+  border: none;
+  border-radius: 5px;
+}
+
+#canvasimg {
+  margin: 1rem 0rem 1rem 2rem;
+  border: 2px solid rgb(14, 130, 150);
+  border-radius: 5px;
 }

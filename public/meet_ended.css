@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&family=Montserrat:ital,wght@0,200;0,400;1,200;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gentium Book Plus", serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content {
+  margin-top: 100px;
+  width: 300px;
+  height: 350px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.199);
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.message {
+  position: relative;
+  top: -50px;
+}
+
+.buttons button {
+  position: relative;
+  top: -40px;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: tan;
+  color: white;
+  cursor: pointer;
+}

@@ -1,118 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-   <script>
-      const ROOM_ID = "<%= roomId %>"
-   </script>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-   <!-- <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script> -->
-   <script src="https://unpkg.com/peerjs@1.4.5/dist/peerjs.min.js"></script>
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-   <script src="/socket.io/socket.io.js" defer></script>
-   <script src="https://kit.fontawesome.com/64c8f625d7.js" crossorigin="anonymous"></script>
-   <!-- <link rel="stylesheet" href="style.css"> -->
-   <link rel="stylesheet" href="style_for_room.css">
-   <script src="script4.js" defer></script>
-   <script>let Uname = `<%- uname||"Guest" -%>` ;</script>
-  <!-- <script>let Uname="oyee";</script> -->
-   <style>
-      #video-grid{
-         /* display: flex; */
-         justify-content: center;
-         /* flex-wrap: wrap; */
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const ROOM_ID = "<%= roomId %>";
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script> -->
+    <script src="https://unpkg.com/peerjs@1.4.5/dist/peerjs.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/64c8f625d7.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style_for_room.css" />
+    <script src="script4.js" defer></script>
+    <script>
+      let Uname = `<%- uname||"Guest" -%>`;
+    </script>
+    <!-- <script>let Uname="oyee";</script> -->
+    <style>
+      #video-grid {
+        /* display: flex; */
+        justify-content: center;
+        /* flex-wrap: wrap; */
       }
-      video{
-         height: 300px;
-         width: 400px;
-         object-fit: cover;
-         padding: 8px;
+      video {
+        height: 300px;
+        width: 400px;
+        object-fit: cover;
+        padding: 8px;
       }
-   </style>
-</head>
-<body onload="initp()">
-   <div class="header container-fluid col-lg-12 col-md-12">
+    </style>
+  </head>
+  <body onload="initp()">
+    <div class="header container-fluid col-lg-12 col-md-12">
       <span class="header_text"> <%= uname||"Guest" %> </span>
-      <span onclick="closevid(this)" id="whiteboard">WhiteBoard</span>
+      <!-- <span>WhiteBoard</span> -->
+      <span
+        onclick="closevid(this)"
+        id="whiteboard"
+      >
+        <span>WhiteBoard</span>
+      </span>
       <span class="roomId">Copy this code to share Room : <%= roomId %></span>
-   </div>
-   <div class="container-fluid">
+    </div>
+    <div class="container-fluid">
       <div class="main row" id="main">
-         <div class="main_left col-lg-9 col-md-12" id="main_left_vid">
-            <div class="main_videos col-lg-9 col-md-12">
-               <div class="video-grid col-lg-9 col-md-12" id="video-grid">
+        <div class="main_left col-lg-9 col-md-12" id="main_left_vid">
+          <div class="main_videos col-lg-9 col-md-12">
+            <div class="video-grid col-lg-9 col-md-12" id="video-grid"></div>
+          </div>
+          <div class="main_controls col-lg-9 col-md-12">
+            <span class="main__controls__block1">
+              <span
+                onclick="muteUnmute()"
+                class="main__controls__button main__mute_button"
+              >
+                <i class="fas fa-microphone icon_imp"></i>
+                <span>Mute</span>
+              </span>
+              <span
+                onclick="playStop()"
+                class="main__controls__button main__video_button"
+              >
+                <i class="fas fa-video icon_imp"></i>
+                <span>Stop Video</span>
+              </span>
+            </span>
+            <span class="main__controls__block2">
+               <span
+               class="main__controls__button"
+               id="Participants"
+               onclick="closechat(this)"
+             >
+               <span>Participants</span>
+             </span>
+              <span
+                onclick="screenfunc()"
+                id="screensharebutton"
+                class="main__controls__button"
+              >
+                ScreenShare
+              </span>
+            </span>
+            <span class="main__controls__block3">
+              <span
+                class="main__controls__button leave_meeting"
+                onclick="Ileave()"
+              >
+                <span>Leave Meeting</span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="main_left col-lg-9 col-md-12" id="main_left_draw">
+          <canvas id="can" width="400" height="400"></canvas>
+
+          <br />
+          <!-- <span id="colorchoose">Choose Color</span> -->
+          <br />
+          <button id="green" class="coloroption" onclick="color(this)">
+            <i class="fa-solid fa-droplet"></i>
+          </button>
+          <button id="blue" class="coloroption" onclick="color(this)">
+            <i class="fa-solid fa-droplet"></i>
+          </button>
+          <button id="red" class="coloroption" onclick="color(this)">
+            <i class="fa-solid fa-droplet"></i>
+          </button>
+          <button id="yellow" class="coloroption" onclick="color(this)">
+            <i class="fa-solid fa-droplet"></i>
+          </button>
+          <button id="orange" class="coloroption" onclick="color(this)">
+            <i class="fa-solid fa-droplet"></i>
+          </button>
+          <button id="black" class="coloroption" onclick="color(this)">
+            <i class="fa-solid fa-droplet"></i>
+          </button>
+          <button id="white" class="coloroption" onclick="color(this)">
+            <i class="fa-solid fa-eraser"></i>
+          </button>
+          <br />
+          <input
+            type="button"
+            value="save"
+            id="btn"
+            class="save_input"
+            size="30"
+            onclick="save()"
+          />
+          <input
+            type="button"
+            value="clear"
+            id="clr"
+            class="clear_input"
+            size="23"
+            onclick="erase()"
+          />
+          <br />
+          <img id="canvasimg" style="display: none" />
+        </div>
+        <div class="main_right col-lg-3 col-md-12" id="main_right_chat">
+          <div class="main__chat_window">
+            <div class="chat__header">
+              <h6>Chat</h6>
+            </div>
+            <ul class="messages" id="messages"></ul>
+          </div>
+          <div class="main__message_container">
+            <input
+              id="chat_message"
+              type="text"
+              placeholder="Type message here..."
+            />
+            <button onclick="sendmsg()" class="main__controls__button">
+              Send
+            </button>
+          </div>
+        </div>
+        <div class="main_right col-lg-3 col-md-12" id="main_right_participants">
+         <div class="main__participants_window">
+             <div class="participants__header">
+               <h6>Participants</h6>
+             </div>
+             <ul class="persons" id="persons"></ul>
+           </div>
    
-               </div>
-            </div>
-            <div class="main_controls col-lg-9 col-md-12">
-               <span class="main__controls__block1">
-                  <span onclick="muteUnmute()" class="main__controls__button main__mute_button">
-                     <i class="fas fa-microphone  icon_imp"></i>
-                     <span>Mute</span>
-                  </span>
-                  <span onclick="playStop()" class="main__controls__button main__video_button" >
-                     <i class="fas fa-video icon_imp"></i>
-                     <span>Stop Video</span>
-                  </span>
-               </span>
-               <span class="main__controls__block2">
-                  <span class="main__controls__button">
-                     <i class="fas fa-user-friends"></i>
-                     <span>Participants</span>
-                  </span>
-                  <span onclick="screenfunc()" id="screensharebutton" class="main__controls__button">
-                     ScreenShare
-                  </span>
-                  <span class="main__controls__button">
-                     <i class="fas fa-comment-alt"></i>
-                     <span>Chat</span>
-                  </span>
-               </span>
-               <span class="main__controls__block3">
-                  <span class="main__controls__button leave_meeting">
-                     <span>Leave Meeting</span>
-                  </span>
-               </span>
-            </div>
-         </div>
-         <div class="main_left col-lg-9 col-md-12" id="main_left_draw">
-            <canvas id="can" width="400" height="400" ></canvas>
-            
-            <br>
-            <!-- <span id="colorchoose">Choose Color</span> -->
-            <br>
-            <button  id="green"  class="coloroption" onclick="color(this)"><i class="fa-solid fa-droplet"></i></button>
-            <button id="blue" class="coloroption" onclick="color(this)"><i class="fa-solid fa-droplet"></i></button>
-            <button id="red" class="coloroption" onclick="color(this)"><i class="fa-solid fa-droplet"></i></button>
-            <button id="yellow" class="coloroption" onclick="color(this)"><i class="fa-solid fa-droplet"></i></button>
-            <button id="orange" class="coloroption" onclick="color(this)"><i class="fa-solid fa-droplet"></i></button>
-            <button id="black" class="coloroption" onclick="color(this)"><i class="fa-solid fa-droplet"></i></button>
-            <button id="white" class="coloroption" onclick="color(this)"><i class="fa-solid fa-eraser"></i></button>
-            <br>
-            <input type="button" value="save" id="btn" class="save_input"size="30" onclick="save()">
-            <input type="button" value="clear" id="clr" class="clear_input" size="23" onclick="erase()"> 
-            <br>
-            <img id="canvasimg" style="display:none;">
-         </div>
-         <div class="main_right col-lg-3 col-md-12">
-            <div class="main__chat_window">
-               <div class="chat__header">
-                  <h6>Chat</h6>
-               </div>
-               <ul class="messages">
-                  
-               </ul>
-   
-            </div>
-            <div class="main__message_container">
-               <input id="chat_message" type="text" placeholder="Type message here...">
-               <button onclick="sendmsg()" class="main__controls__button">Send</button>
-            </div>   
-         </div>
+ 
+ 
       </div>
-   </div>
-</body>
+    </div>
+  </body>
 </html>

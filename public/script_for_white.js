@@ -1,57 +1,80 @@
-const socket = io('/')
+const socket = io("/");
 // const myPeer = new Peer();
 
-var canvas, ctx, flag = false, prevX = 0,currX = 0,prevY = 0,currY = 0,dot_flag = false;
+var canvas,
+  ctx,
+  flag = false,
+  prevX = 0,
+  currX = 0,
+  prevY = 0,
+  currY = 0,
+  dot_flag = false;
 
-var x = "black",y = 2;
+var x = "black",
+  y = 2;
 
-const initp=()=> {
-    canvas = document.getElementById('can');
-    ctx = canvas.getContext("2d");
-    w = canvas.width;
-    h = canvas.height;
+const initp = () => {
+  canvas = document.getElementById("can");
+  ctx = canvas.getContext("2d");
+  w = canvas.width;
+  h = canvas.height;
 
-    canvas.addEventListener("mousemove", function (e) {
-        findxy('move', e)
-    }, false);
-    canvas.addEventListener("mousedown", function (e) {
-        findxy('down', e)
-    }, false);
-    canvas.addEventListener("mouseup", function (e) {
-        findxy('up', e)
-    }, false);
-    canvas.addEventListener("mouseout", function (e) {
-        findxy('out', e)
-    }, false);
+  canvas.addEventListener(
+    "mousemove",
+    function (e) {
+      findxy("move", e);
+    },
+    false
+  );
+  canvas.addEventListener(
+    "mousedown",
+    function (e) {
+      findxy("down", e);
+    },
+    false
+  );
+  canvas.addEventListener(
+    "mouseup",
+    function (e) {
+      findxy("up", e);
+    },
+    false
+  );
+  canvas.addEventListener(
+    "mouseout",
+    function (e) {
+      findxy("out", e);
+    },
+    false
+  );
 };
-    
-const color=(obj)=>{
-    switch (obj.id) {
-        case "green":
-            x = "green";
-            break;
-        case "blue":
-            x = "blue";
-            break;
-        case "red":
-            x = "red";
-            break;
-        case "yellow":
-            x = "yellow";
-            break;
-        case "orange":
-            x = "orange";
-            break;
-        case "black":
-            x = "black";
-            break;
-        case "white":
-            x = "white";
-            break;
-    }
-    if (x == "white") y = 14;
-    else y = 2;
 
+const color = (obj) => {
+  switch (obj.id) {
+    case "green":
+      x = "green";
+      break;
+    case "blue":
+      x = "blue";
+      break;
+    case "red":
+      x = "red";
+      break;
+    case "yellow":
+      x = "yellow";
+      break;
+    case "orange":
+      x = "orange";
+      break;
+    case "black":
+      x = "black";
+      break;
+    case "white":
+      x = "white";
+      break;
+  }
+  if (x == "white") y = 14;
+  else y = 2;
 };
 
 // function draw() {
@@ -64,68 +87,85 @@ const color=(obj)=>{
 //     ctx.closePath();
 // }
 
-socket.on('ondraw',({x:x,y:y,prevX:prevX,prevY:prevY,currX:currX,currY:currY})=>{
+socket.on(
+  "ondraw",
+  ({ x: x, y: y, prevX: prevX, prevY: prevY, currX: currX, currY: currY }) => {
     ctx.beginPath();
-        ctx.moveTo(prevX, prevY);
-        ctx.lineTo(currX, currY);
-        ctx.strokeStyle = x;
-        ctx.lineWidth = y;
-        ctx.stroke();
-        ctx.closePath();
+    ctx.moveTo(prevX, prevY);
+    ctx.lineTo(currX, currY);
+    ctx.strokeStyle = x;
+    ctx.lineWidth = y;
+    ctx.stroke();
+    ctx.closePath();
     // }
-});
+  }
+);
 
-const erase=()=> {
-    var m = confirm("Want to clear");
-    if (m) {
-        ctx.clearRect(0, 0, w, h);
-        document.getElementById("canvasimg").style.display = "none";
-    }
+const erase = () => {
+  var m = confirm("Want to clear");
+  if (m) {
+    ctx.clearRect(0, 0, w, h);
+    document.getElementById("canvasimg").style.display = "none";
+  }
 };
 
-const save=()=>{
-    document.getElementById("canvasimg").style.border = "2px solid";
-    var dataURL = canvas.toDataURL();
-    document.getElementById("canvasimg").src = dataURL;
-    document.getElementById("canvasimg").style.display = "inline";
+const save = () => {
+  document.getElementById("canvasimg").style.border = "2px solid";
+  var dataURL = canvas.toDataURL();
+  document.getElementById("canvasimg").src = dataURL;
+  document.getElementById("canvasimg").style.display = "inline";
 };
 
-const findxy=(res, e)=>{
-    if (res == 'down') {
-        prevX = currX;
-        prevY = currY;
-        currX = e.clientX - canvas.offsetLeft;
-        currY = e.clientY - canvas.offsetTop;
-        flag=true;
-    dot_flag=true;
+const findxy = (res, e) => {
+  if (res == "down") {
+    prevX = currX;
+    prevY = currY;
+    currX = e.clientX - canvas.offsetLeft;
+    currY = e.clientY - canvas.offsetTop;
+    flag = true;
+    dot_flag = true;
     if (dot_flag) {
-        socket.emit('down',{x:x,y:y,prevX:prevX,prevY:prevY,currX:currX,currY:currY});
-        dot_flag=false;
-    }   
-        
+      socket.emit("down", {
+        x: x,
+        y: y,
+        prevX: prevX,
+        prevY: prevY,
+        currX: currX,
+        currY: currY,
+      });
+      dot_flag = false;
     }
-    if (res == 'up' || res == "out") {
-        flag = false;
+  }
+  if (res == "up" || res == "out") {
+    flag = false;
+  }
+  if (res == "move") {
+    if (flag) {
+      prevX = currX;
+      prevY = currY;
+      currX = e.clientX - canvas.offsetLeft;
+      currY = e.clientY - canvas.offsetTop;
+      // draw();
+      socket.emit("draw", {
+        x: x,
+        y: y,
+        prevX: prevX,
+        prevY: prevY,
+        currX: currX,
+        currY: currY,
+      });
     }
-    if (res == 'move') {
-        if (flag) {
-            prevX = currX;
-            prevY = currY;
-            currX = e.clientX - canvas.offsetLeft;
-            currY = e.clientY - canvas.offsetTop;
-            // draw();
-            socket.emit('draw',{x:x,y:y,prevX:prevX,prevY:prevY,currX:currX,currY:currY})
-        }
-    }
+  }
 };
 
-
-socket.on('ondown',({x:x,y:y,prevX:prevX,prevY:prevY,currX:currX,currY:currY})=>{
-    
-        ctx.beginPath();
-        ctx.fillStyle = x;
-        ctx.fillRect(currX, currY, 2, 2);
-        ctx.closePath();
-});
+socket.on(
+  "ondown",
+  ({ x: x, y: y, prevX: prevX, prevY: prevY, currX: currX, currY: currY }) => {
+    ctx.beginPath();
+    ctx.fillStyle = x;
+    ctx.fillRect(currX, currY, 2, 2);
+    ctx.closePath();
+  }
+);
 
 console.log("hi there");

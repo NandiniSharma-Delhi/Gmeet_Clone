@@ -1,72 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="general.js"></script>
     <script src="checkSettings.js" defer></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-   <!-- <script src="/socket.io/socket.io.js" defer></script> -->
-   <script src="https://kit.fontawesome.com/64c8f625d7.js" crossorigin="anonymous"></script>
-   
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="/socket.io/socket.io.js" defer></script> -->
+    <script
+      src="https://kit.fontawesome.com/64c8f625d7.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- <script src="script_for_joinmeet.js"></script> -->
-    <link rel="stylesheet" href="style_for_joinmeet.css">
-    <script>var Room_id_for_me;</script>
-    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Rubik+Moonrocks&family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
-   
+    <link rel="stylesheet" href="style_for_joinmeet.css" />
+    <script>
+      var Room_id_for_me;
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fascinate&family=Rubik+Moonrocks&family=Titillium+Web:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Meet</title>
-</head>
-<body>
-    <div class="header">
-        <h3 class="heading_title">Ciao!</h3>
-    
-        <div class="heading_text">
-            Ready <%= uname||"Dear" %> <span class="question_mark">?</span>
-        </div>
+  </head>
+
+  <body>
+    <nav>
+      <span>
+        <img class="logo" src="logo.jpeg" alt="error" width="120px" />
+      </span>
+      <ul
+        class="navbar"
+        style="margin-top: o; margin-top: 0px; padding-top: 0px"
+      >
+        <li class="nav-item ms-auto">
+          <a class="nav-link" aria-current="page" href="/views/Help.ejs"
+            >Help</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/views/termsandservices.ejs"
+            >Terms & Services</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/views/privacypolicy.ejs">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="/google" class="login_button_instant">
+            Sign in <span class="fa-solid fa-user"></span>&nbsp; &nbsp;
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="heading_text">
+      Are you ready <%= uname||"Dear" %> <span>?</span>
     </div>
     <div class="row">
-        <script>var Room_id_for_me = `<%= roomId %>`</script>
-        <div class="video_block col-lg-5 col-md-12 col-sm-12">
-            <div class="video_box">
-                <video id="videocam" poster="https://www.pngall.com/profile-png/download/51531">Video stream not available.</video>
-                <div class="overlay">
-                <span><%= uname||"Guest" %></span>
-                </div>
-            </div>
-            
-            
+      <script>
+        var Room_id_for_me = `<%= roomId %>`;
+      </script>
+
+      <div class="switch">
+        <span onclick="muteUnmute()" class="mute_button">
+          <i class="fas fa-microphone mic"></i>
+          Audio On
+        </span>
+        <span onclick="playStop()" class="video_button">
+          <i class="fas fa-video"></i>
+          Video On
+        </span>
+      </div>
+
+      <div class="video_block col-lg-5 col-md-12 col-sm-12">
+        <div class="video_box">
+          <video
+            id="videocam"
+            poster="https://www.pngall.com/profile-png/download/51531"
+          >
+            Video stream not available.
+          </video>
+          <div class="overlay">
+            <span> <%= uname||"Guest" %> </span>
+          </div>
         </div>
-        <div class="buttons_controls col-lg-7">
-            <span onclick="muteUnmute()" class="mute_button">
-                <i class="fas fa-microphone"></i>
-                Audio On
-            </span>
-            <span onclick="playStop()" class="video_button" >
-                <i class="fas fa-video"></i>
-                Video On
-            </span>
-            <br>
-            <br>
-            <br>
-            <span onclick="my_room()" class="new_room_button" > New Room</span>
-            <span class="text_controls">Or</span>
-            <input type="text" placeholder="meet code" id="meeting_code" class="input_for_code">
-            <span onclick="join_a_new_room()" class="join_button" >Join</span> 
-        </div>
-            
-        
-        
-        
-        
-         <!-- <div>
+      </div>
+      <div class="buttons_controls col-lg-7">
+        <br />
+        <br />
+        <br />
+        <span onclick="my_room()" class="new_room_button">
+          Create a new room
+        </span>
+        <br />
+        <span class="text_controls">Or</span>
+        <input
+          type="text"
+          placeholder="Enter code or meeting link"
+          id="meeting_code"
+          class="input_for_code"
+        />
+        <span onclick="join_a_new_room()" class="join_button">Join</span>
+      </div>
+
+      <!-- <div>
             <script>var roomid=<%= roomId %></script>
             <button onclick="enter(`${roomid}`)">Ask to Join</button>
          </div> -->
-
     </div>
     <%- include('footer') -%>
-</body>
+  </body>
 </html>
