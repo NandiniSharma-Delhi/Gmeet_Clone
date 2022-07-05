@@ -1,166 +1,217 @@
 @import "footer.css";
 
-
 /* header*/
+
+ul {
+  color: rgb(21, 165, 117);
+  width: 50%;
+  float: right;
+  margin-top: 10px;
+}
+
+.nav {
+  box-shadow: 0 10px 10px 5px;
+}
+
+.body1 {
+  display: flex;
+  justify-content: left;
+}
+
+li {
+  color: rgb(21, 165, 117);
+  display: contents;
+  padding: 15px, 30px;
+}
+
+#container {
+  background-color: white;
+}
 a.navbar-brand {
-    font-family: 'Rubik Moonrocks', cursive;
-    /* color:rgb(14, 130, 150); */
-    background:rgb(14, 130, 150) ;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
-    padding-left: 1rem;
-}
-a.navbar-brand:hover {
-    /* color:rgb(12, 110, 127); */
-    background: rgb(12, 110, 127);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
+  font-family: "Arial Narrow Bold", sans-serif;
+  font-weight: bold;
+  color: rgb(176, 72, 210);
+  padding-left: 10px;
+  padding-bottom: 8px;
+  padding-top: 10px;
+  font-size: xx-large;
 }
 
-.navbar-nav {
-    font-family:'Titillium Web', sans-serif;
-    font-weight: 600;
-}
-
-#Sign_In_Button {
-    background:rgb(14, 130, 150) ;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
-}
-#Sign_In_Button:hover {
-    background:rgb(12, 110, 127);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
+a.nav-link {
+  color: rgb(21, 165, 117);
+  margin: 0px;
+  padding: 2%;
 }
 
 .nav-item {
-    padding-left: 1rem;
+  padding-left: 5px;
+  margin: 0;
 }
 
+.navbar-nav {
+  font-family: "Titillium Web", sans-serif;
+
+  float: left;
+  font: bold 12px Arial, Helvetica, Sans-serif;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 0px;
+  overflow: hidden;
+  width: 100%;
+}
+
+#Sign_In_Button {
+  background: rgb(14, 130, 150);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+#Sign_In_Button:hover {
+}
 
 /*header_end*/
 /*welcome page*/
 .heading {
-    font-family: 'Rubik Moonrocks', cursive;
-    font-size:4cm;
-    /* background-image: url("https://www.thestatesman.com/wp-content/uploads/2020/07/BeFunky-collageg.jpg");
+  font-family: "Rubik Moonrocks", cursive;
+  font-size: 4cm;
+  /* background-image: url("https://www.thestatesman.com/wp-content/uploads/2020/07/BeFunky-collageg.jpg");
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text; */
-    background: url(https://th.bing.com/th/id/R.f95200d66cc90cd4d876cb7b8cff9b51?rik=VlyNldHaMH7bUg&riu=http%3a%2f%2fcdn.playbuzz.com%2fcdn%2fca8189c8-735c-4664-a3f2-0cf16f5f02e8%2f85c36bf6-03fd-4b50-b20a-b5d64f93b833.gif&ehk=0%2fgzMLaYUtl2d7KZK%2fUSwmGOVrVIJACNWdZ5yIvbv2c%3d&risl=&pid=ImgRaw&r=0);
+  background: url(https://th.bing.com/th/id/R.f95200d66cc90cd4d876cb7b8cff9b51?rik=VlyNldHaMH7bUg&riu=http%3a%2f%2fcdn.playbuzz.com%2fcdn%2fca8189c8-735c-4664-a3f2-0cf16f5f02e8%2f85c36bf6-03fd-4b50-b20a-b5d64f93b833.gif&ehk=0%2fgzMLaYUtl2d7KZK%2fUSwmGOVrVIJACNWdZ5yIvbv2c%3d&risl=&pid=ImgRaw&r=0);
   background-size: cover;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .heading_text {
-    font-family:'Titillium Web', sans-serif;
-    font-size:1cm;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  text-align: right;
+  padding-top: 100px;
+  /* padding-right: 50px; */
+  width: 400px;
+  text-align: center;
+}
+
+.heading_text2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  text-align: right;
+  /* padding-right: 170px; */
+  color: rgb(47, 47, 47);
+  width: 400px;
+  text-align: center;
 }
 
 .heading_subtext {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-family:'Titillium Web', sans-serif;
-    font-size:0.75cm;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 0.75cm;
+}
+
+.logo {
+  display: inline-block;
+  position: absolute;
+  /* clip: rect(0px, 50px, 50px); */
+  width: 200px;
 }
 
 .main {
-    height: 500px;
-    padding:3rem 3rem 3rem 3rem;
-    /* display: flex; */
+  height: 500px;
+  padding: 3rem 3rem 3rem 3rem;
+  /* display: flex; */
 }
 .guestbox {
-    display: flex;
-    height: 125px;
-    font-family:'Titillium Web', sans-serif;
-    background-color: rgba(231, 234, 237, 0.286);
-    border-radius: 0.5cm;
-    /* padding:0rem 0rem 1rem 0rem; */
-    margin-bottom: 0.5cm;
+  display: flex;
+  height: 125px;
+  font-family: "Titillium Web", sans-serif;
+  background-color: rgba(231, 234, 237, 0.286);
+  border-radius: 0.5cm;
+  /* padding:0rem 0rem 1rem 0rem; */
+  margin-bottom: 0.5cm;
 }
 
 .loginbox {
-    display: flex;
-    height: 125px;
-    font-family:'Titillium Web', sans-serif;
-    background-color: rgba(231, 234, 237, 0.286);
-    border-radius: 0.5cm;
-    /* padding:0rem 0rem 1rem 0rem; */
-    margin-bottom: 0.5cm;
+  display: block;
+  font-family: "Titillium Web", sans-serif;
+  background-color: rgb(77, 162, 247);
 }
 
+.login_button_instant {
+  color: rgb(21, 165, 117);
+}
+
+.login_button_instant:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+.guestbox_container-fluid {
+  width: 10%;
+  margin-right: 50%;
+}
 .guest_text {
-    font-weight: 600;
-    flex: 0.3;
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 1rem 1rem 3rem;
+  flex-direction: column;
+  padding-left: 100%;
+  padding-top: 10px;
+  margin-left: 20px;
 }
 .guest_button {
-    font-size: 0.5cm;
-    flex:0.2;
-    padding: 3rem 1rem 1rem 1rem;
+  font-size: 0.5cm;
+  /* flex: 0.2; */
+  /* padding-left: 64%;
+  padding-top: 5px; */
+  margin-top: 30px;
+  margin-left: 80px;
 }
 .guest_subtext {
-    font-size: 0.3cm;
-    flex: 0.5;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1rem 1rem 3rem;
+  font-size: 0.3cm;
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem 1rem 3rem;
 }
 .login_text {
-    font-weight: 600;
-    flex: 0.3;
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 1rem 1rem 3rem;
+  font-weight: 600;
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1rem 1rem 3rem;
 }
 .login_subtext {
-    font-size: 0.3cm;
-    flex: 0.5;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1rem 1rem 3rem;
+  font-size: 0.3cm;
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem 1rem 3rem;
 }
 .login_button {
-    font-size:0.5cm;
-    flex:0.2;
-    padding: 3rem 1rem 1rem 1rem;
+  font-size: 0.5cm;
+  flex: 0.2;
+  padding: 3rem 1rem 1rem 1rem;
 }
 .guest_button_instant {
-    font-weight: 600;
-    background-color:rgb(14, 130, 150);
-    color:aliceblue;
-    padding:1rem 1rem 1rem 1rem;
-    border-radius:0.75rem;
-    
+  font-weight: 600;
+  background-color: rgb(14, 130, 150);
+  color: aliceblue;
+  padding: 1rem 1rem;
+  border-radius: 0.75rem;
 }
 .guest_button_instant:hover {
-    font-weight: 600;
-    background-color:rgb(12, 110, 127);
-    color:aliceblue;
-    padding:1rem 1rem 1rem 1rem;
-    border-radius:0.75rem;
-    text-decoration: none;
+  font-weight: 600;
+  background-color: rgb(12, 110, 127);
+  color: aliceblue;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
 }
-.login_button_instant {
-    font-weight: 600;
-    background-color:rgb(14, 130, 150);
-    color:aliceblue;
-    padding:1rem 1rem 1rem 1rem;
-    border-radius:0.75rem;
-    
+.left {
+  padding-top: 100px;
 }
-.login_button_instant:hover {
-    font-weight: 600;
-    background-color:rgb(12, 110, 127);
-    color:aliceblue;
-    padding:1rem 1rem 1rem 1rem;
-    border-radius:0.75rem;
-    text-decoration: none;
+
+.rightside {
+  margin-left: 100px;
 }
+
 /*welcome ends */
