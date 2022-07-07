@@ -1,5 +1,8 @@
 # Gmeet Clone
 
+
+## Under Coding Club,IITG
+### Members: Nandini Sharma,Ashish Pal,Abhijeet, Harsh Gupta
 This project is a gmeet clone where we can organize a meet with our friends .
 Features :
  Videocall
