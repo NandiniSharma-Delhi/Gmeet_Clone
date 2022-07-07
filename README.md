@@ -1,22 +1,18 @@
-#video call with screenshare and whiteboard
+#Gmeet Clone
 
-issues:
+This project is a gmeet clone where we can organize a meet with our friends .
+Features :
+ Videocall
+ Screenshare
+ Live Chat
+ Collaborative Whiteboard
 
+Technologies used:
+ Socket.io
+ PeerJs
+ Node.js
+ Ejs
+ Express.js
+ Passport.js
 
-
-issues resolved:
-
-
-
-techused:
-socket.io
-peerjs
-nodejs
-ejs
-express
-for google authentication:
-passport 
-
-for adding to it:
-first clone this repo then do changes on your end
-then git push,but make sure the changes are working
+We can make the users join a room or create a new room and share your room code for others to join.
